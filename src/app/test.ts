@@ -1,5 +1,5 @@
 
-import {} from 'fs'
+import {readFile} from 'fs'
 
 let s = "OK"
 console.log(s)
