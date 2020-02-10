@@ -14,3 +14,8 @@ class Test {
 
 let t = new Test()
 t.meep()
+
+
+let decimal : number = 6
+let isDone : boolean = false
+
