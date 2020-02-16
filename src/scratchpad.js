@@ -1,20 +1,31 @@
+//compiles fine
+function functionscope(){
 
-let fullName = `Perico Palotes`
-let age = 37
-let sentence = `Hola, me llamo ${ fullName }`
-console.log(sentence)
-
-let englishName = function(name){
-
-  let sentence = `Hello, my name is ${ name }`
-  console.log(sentence) 
-}
-englishName(fullName)
-englishName(1000)   // Hello, my name is 1000
-
-let englishName2 = function(name){
-
-  let sentence = `Hello, my name is ${ name }`
-  console.log(sentence) 
-}
-
+    for(i=0;i < 10; i++){
+  
+      console.log(i)
+    }
+    if (true){ 
+      var i = 10000
+    } 
+    console.log(i)
+  }
+  
+  //gives error TS2304: Cannot find name 'i'.
+  function blockscope(){
+  
+    //let i;
+    
+    for(i=0;i < 10; i++){
+  
+      console.log(i)
+    }
+    if (true){ 
+      let i = 100000
+    }
+    console.log(i)
+  }
+  
+  functionscope()
+  blockscope()
+  
