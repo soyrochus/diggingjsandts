@@ -1,5 +1,5 @@
 //requiring path and fs modules
-import path from 'path'
+let  path = require('path')
 import {readdir} from 'fs'
 //joining path of directory 
 const directoryPath = path.join("./", 'node_modules');
