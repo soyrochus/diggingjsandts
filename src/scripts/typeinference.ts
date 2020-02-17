@@ -1,33 +1,18 @@
-const fullName = `Perico Palotes`;
-const age = 37;
-const sentence = `Hola, me llamo ${fullName}`;
-console.log(sentence);
+//Number
+let decimal   : number = 6
+let hex       : number = 0xf00d
+let binary    : number = 0b1010
+let octal     : number = 0o744
+ 
+//bigInt
+let big       : BigInt = 9007199254740992n //note ‘n’ at end
+let bigger    : BigInt = 2n ** 153n 
+//11417981541647679048466287755595961091061972992n
 
-// error TS7006: Parameter 'name' implicitly has an 'any' type.
-// let englishName = function(name){
+//Boolean
+let isDone   : boolean = false
 
-const englishName = (name: any) => {
-    const sentence = `Hello, my name is ${name}`;
-    console.log(sentence);
-};
-englishName(fullName);
-englishName(1000); // Hello, my name is 1000
-
-const englishName2 = (name: string) => {
-    const sentence2 = `Hello, my name is ${name}`;
-    console.log(sentence2);
-};
-// Compile error
-// englishName2(1000)
-
-const arr1 = [0, 1, 2];
-// Not inferred to be a Tuple, but rather an array of elements of two possible types: number OR String
-const arr2 = [500, 'Internal Server Error'];
-console.log(arr2);
-// compile error
-// let tuple : [number, string] = arr2
-
-type HTTPError = [number, string];
-const error1: HTTPError = [500, 'Internal Server Error'];
-const error2 = [500, 'Internal Server Error'] as HTTPError; // Type Asseryion (not "cast")
-console.log(error1, error2);
+//String
+let part     : string = "Rubeus Hagrid"
+let actor    : string = "Robbie Coltrane"
+let fact     : string = `$p{art} is played by ${actor}`
