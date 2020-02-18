@@ -21,21 +21,21 @@ async function getFiles(path: string): Promise<Item<fileName>> {
     return root
 }
  
+let prnItem = (s: string) => {
+    console.log(s)
+} 
+
+let asyncPrinItem = (s: string ) : Promise<void> => {
+    return new Promise((resolve)=>{
+        setImmediate(()=> {
+            console.log(s)
+            resolve()
+        })
+    })
+}
 async function main(){
     try{
-        let files = await getFiles("/home/iwk/Music")
-        let prnItem = (s: string) => {
-            console.log(s)
-        } 
-
-        let asyncPrinItem = (s: string ) : Promise<void> => {
-            return new Promise((resolve)=>{
-                setImmediate(()=> {
-                    console.log(s)
-                    resolve()
-                })
-            })
-        }
+        let files = await getFiles("c:\\temp")
        
         walker_sync(files, prnItem)
 
