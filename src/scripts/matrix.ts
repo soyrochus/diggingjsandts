@@ -13,8 +13,8 @@ function matrix_map<T>(matrix: Matrix<T>, operation: celloperation<T>) : Matrix<
             }
             return new_matrix
         } else {
-            //return matrix.map(operation)
-            return (matrix as Array<T>).map(operation) as Matrix<T>
+         
+            return (matrix as Array<T>).map(operation) 
         }
     }else {
         return matrix
