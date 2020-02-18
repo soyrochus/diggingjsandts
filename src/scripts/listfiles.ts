@@ -1,6 +1,6 @@
 import  {join} from 'path'
 import * as fs from 'fs'
-import { Item, seq, node, addseq, walker } from './walker'
+import { Item, seq, node, addseq, walker_sync , walker} from './walker'
 
 type fileName = string;
 
@@ -27,7 +27,20 @@ async function main(){
         let prnItem = (s: string) => {
             console.log(s)
         } 
-        walker(files, prnItem)
+
+        let asyncPrinItem = (s: string ) : Promise<void> => {
+            return new Promise((resolve)=>{
+                setImmediate(()=> {
+                    console.log(s)
+                    resolve()
+                })
+            })
+        }
+       
+        walker_sync(files, prnItem)
+
+        walker(files, asyncPrinItem)
+
     }catch(e){
         console.log(e)
     }
