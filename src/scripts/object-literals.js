@@ -39,3 +39,16 @@ let shoppingItem = {
  }
  
  shoppingItem2.report() // -> The product orange is for Sale! See the offer...
+
+let createItem = (name, num, sale) =>{
+    let shoppingItem = {
+        name,
+        num,
+        sale
+    }
+    return shoppingItem
+}
+ 
+console.log(createItem("orange", 100, true))
+console.log(createItem("apple", 50, false))
+
