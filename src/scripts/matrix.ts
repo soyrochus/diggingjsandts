@@ -1,8 +1,10 @@
 
-type Matrix<T> = Array<T> | Array<Matrix<T>>                
-type celloperation<T> = (_: T) => T
+export type Matrix<T> = Array<T> | Array<Matrix<T>>                
+export interface Celloperation<T> {
+    (_: T) : T
+}
 
-function matrix_map<T>(matrix: Matrix<T>, operation: celloperation<T>) : Matrix<T> {
+export function matrix_map<T>(matrix: Matrix<T>, operation: Celloperation<T>) : Matrix<T> {
          
     if(matrix.length > 0){
         
@@ -21,19 +23,7 @@ function matrix_map<T>(matrix: Matrix<T>, operation: celloperation<T>) : Matrix<
     }
 }
 
-let matrix2d: Matrix<number> = [[5, 9, -1], [100, 2], [-10, -8, 56]]
-
-let matrix3d: Matrix<number> = [[[5, 9, -1], [100, 2], [-10, -8, 56]],
-                                [[],[],[]],
-                                [],
-                                [[50, 90, -100], [-90, 200], [-150, -8, 569]]]
-
-function flooratzero(e: number) :  number {
-   if (e < 0)
-       return 0
-   else
-       return e
-}
-
-console.log(matrix_map<number>(matrix2d, flooratzero))
-console.log(matrix_map<number>(matrix3d, flooratzero))
+export interface IteratorProtocol<T>{
+    next: ()=>T, 
+    done: ()=>boolean
+} 

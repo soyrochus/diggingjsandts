@@ -1,0 +1,50 @@
+= Digging(in) JavaScript and TypeScript
+
+This is not a manual nor a book. It's the notes of a short course, basically an introduction.
+
+The text is not important. The accompanying code is, even though it's rather basic. Use the code, execute it, modify it, debug it, play with it. 
+
+Neither this document nor the course itself do represent a well organised structure. It's a narrative which offers a thin thread through the labyrinth which is JavaScript/TypeScript.
+
+The narrative evolves, showing increasingly complex features, using topics shown previously. The point is to “dig in” and to let the matter grow own you. 
+
+
+For that reason, the course only deals with a tiny bit of the fast expanse which is  JavaScript/TypeScript. Use the         icon seen down-left on many pages to explore more in depth. 
+
+Finally, this course and document considers JavaScript and TypeScript to be the same language, the latter being a superset of the former. This has some small downsides but the advantages far outweigh these.
+
+== Quick installation
+
+* Install node.js (see: https://nodejs.org/ )
+
+* Install TypeScript and other tools globally with the command:
+    
+    npm install -g typescript ts-node prettier eslint 
+
+** Note that the executables will be installed to a path - typically something like `C:\Users\<<user>>\AppData\Roaming\npm\` - which needs to be included in your `PATH` environment variable (see: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+    
+** Installed will be *ts-node*, which allows running a node shell with TypeScript without having a separate compile phase
+    
+** Installed will be *ESLint*, the primary linter for both JavaScript and TypeScript. A linter is a tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs. 
+    
+** Installed will be *Prettier*, which handles code formatting, important to guarantee a consistent coding style in a team.
+    For configuration option of both ESLint and Prettier see: https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
+
+* Clone the source code accompanying this presentation with 
+
+    git clone https://github.com/soyrochus/diggingjsandts
+
+- Install the remaining dependencies by running in the diggingjsandts/src directory
+
+    npm install
+
+
+== License(s)
+
+Copyright 2020 Iwan van der Kleijn
+
+The examples are licenced under the Apache Public License 2.0.
+
+The documentation is licensed under the terms of the Creative Commons License (Attribution-NoDerivatives 4.0 International).
+
+

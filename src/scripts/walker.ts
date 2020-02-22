@@ -1,17 +1,15 @@
 //requiring path and fs modules
 
-
-
 export type Item<T> = 
     | {type: "node", node: T}
-    | {type: "seq", seq: Array<Item<T>>}
+    | {type: "seq", node: T, seq: Array<Item<T>>}
 
 export function node<T>(e: T): Item<T> {
     return {type: "node", node: e}
 }   
 
-export function seq<T>(...elements: Array<Item<T>>) : Item<T> {
-    return {type: "seq", seq: elements}
+export function seq<T>(node: T, ...elements: Array<Item<T>>) : Item<T> {
+    return {type: "seq", node, seq: elements}
 }
 
 export function addseq<T>(item: Item<T>, newItem: Item<T>): Item<T>{
@@ -29,6 +27,7 @@ export function walker_sync<T, R>(item: Item<T>, operation: ItemOperation<T>) {
     if (item.type == "node"){
         return operation(item.node)
     }else {
+        operation(item.node)
         for(const e of item.seq){
             if (e.type == "node"){
                 operation(e.node)
@@ -48,10 +47,11 @@ export async function walker<T>(item: Item<T>, operation: AsyncItemOperation<T>)
     if (item.type == "node"){
         await operation(item.node)
     }else {
+        await operation(item.node)
         for(const e of item.seq){
             if (e.type == "node"){
                 await operation(e.node)
-            }else {
+            }else { 
                 await walker(e, operation)
             }
         }
