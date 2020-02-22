@@ -35,7 +35,7 @@ let asyncPrinItem = (s: string ) : Promise<void> => {
 }
 async function main(){
     try{
-        let files = await getFiles("c:\\temp")
+        let files = await getFiles("/home/iwk/Music")
        
         walker_sync(files, prnItem)
 
