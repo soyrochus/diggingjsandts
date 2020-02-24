@@ -1,4 +1,4 @@
-function print(text: string | string[]): string {
+function _print(text: string | string[]): string {
     if (typeof text === 'string') {
         return text
     }
@@ -9,13 +9,13 @@ function print(text: string | string[]): string {
     return text.join(' ')
 }
 
-let x = print('hello text')
-let y = print(['hello', 'text', 'array'])
+let x1 = _print('hello text')
+let y1 = _print(['hello', 'text', 'array'])
 
 // let z = print(5) // Error: Argument of type '5' is not assignable to type 'string | string[]'
 
-console.log(x);
-console.log(y);
+console.log(x1);
+console.log(y1);
 
 class Student {
     study() {

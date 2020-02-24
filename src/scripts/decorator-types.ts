@@ -1,23 +1,23 @@
-import {take} from "./utils"
+import { take } from './utils'
 
-function Iterable(konstructor: Function){
-    konstructor.prototype[Symbol.iterator] = function(){
+function Iterable(konstructor: Function) {
+    konstructor.prototype[Symbol.iterator] = function() {
         return this.__iter__()
     }
 }
 
-@Iterable //make any object iterable as long as it has a *__iter__ generator method 
-class Test{
-    private a:string
-    private b:string
-    private c:string
-    
-    constructor(a: string, b : string, c: string){
+@Iterable //make any object iterable as long as it has a *__iter__ generator method
+class Test {
+    private a: string
+    private b: string
+    private c: string
+
+    constructor(a: string, b: string, c: string) {
         this.a = a
         this.b = b
         this.c = c
     }
-    * __iter__(){
+    *__iter__() {
         yield this.a
         yield this.b
         yield this.b
@@ -27,11 +27,8 @@ class Test{
     }
 }
 
-let t: any = new Test("a", "b", "c")
-for(let e of t){
+let t: any = new Test('a', 'b', 'c')
+for (let e of t) {
     console.log(e)
 }
-console.log(take(new Test("a", "b", "c") as any , 4))
-
-
-
+console.log(take(new Test('a', 'b', 'c') as any, 4))

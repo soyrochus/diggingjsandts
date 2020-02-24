@@ -12,21 +12,21 @@
 function log(target: any, key: string, value: any) {
     return {
         value(...args: any[]) {
-            const result = value.value.apply(this, args);
-            console.log(`method: '${key}' called with arguments '${args}' and with result: '${result}'`);
-            return result;
+            const result = value.value.apply(this, args)
+            console.log(`method: '${key}' called with arguments '${args}' and with result: '${result}'`)
+            return result
         },
-    };
+    }
 }
 
 class Demo {
     @log
     public say(...args: string[]) {
-        console.log('Inside say with arguments: ', args);
-        return 100;
+        console.log('Inside say with arguments: ', args)
+        return 100
     }
 }
 
-const d = new Demo();
-d.say('Booh', 'Lala');
-d.say('Bah');
+const d = new Demo()
+d.say('Booh', 'Lala')
+d.say('Bah')

@@ -1,5 +1,5 @@
-import { readFile } from 'fs';
+import { readFile } from 'fs'
 
 readFile('d:/tmp/data.txt', (err, buf) => {
-    console.log(buf.toString());
-});
+    console.log(buf.toString())
+})

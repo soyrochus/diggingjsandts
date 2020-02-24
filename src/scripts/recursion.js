@@ -1,11 +1,7 @@
-let fibonacci = (n) => {
+let fibonacci = n => {
     console.log(`fibonacci(${n})`)
-    if (n === 0 || n === 1)
-      return n;
-    else
-      return fibonacci(n - 1) + fibonacci(n - 2);
-   }
-   
-   console.log(fibonacci(20))  // -> 6765
+    if (n === 0 || n === 1) return n
+    else return fibonacci(n - 1) + fibonacci(n - 2)
+}
 
-   
+console.log(fibonacci(20)) // -> 6765
