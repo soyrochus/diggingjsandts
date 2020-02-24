@@ -48,4 +48,4 @@ async function main(rootDir: string){
     }
 }
 
-main("/home/iwk/Music")
+main("c:/temp")
