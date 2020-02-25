@@ -5,15 +5,15 @@ shoppingItem[1] = 500
 console.log(shoppingItem) // ->[“orange”, 500, false]
 
 let reset = x => {
-    x = null
-};
+  x = null
+}
 let avar = 100
 reset(avar)
 console.log(avar) // -> 100
 
 let resetArr = x => {
-    x[0] = null
-};
+  x[0] = null
+}
 let a = [100, 200, 300]
 resetArr(a)
 console.log(a) // -> [null, 200, 300]

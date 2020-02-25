@@ -1,21 +1,21 @@
 type Matrix2DG<T> = Array<Array<T>>
 type cellopG<T> = (_: T) => T
 function mapMatrixG<T>(matrix: Matrix2DG<T>, operation: cellopG<T>) {
-    let submatrix = (matrix: Array<T>) => {
-        return matrix.map(operation)
-    }
-    return matrix.map(submatrix)
+  let submatrix = (matrix: Array<T>) => {
+    return matrix.map(operation)
+  }
+  return matrix.map(submatrix)
 }
 
 let examplenumber = [
-    [5, 9, -1],
-    [100, 2],
-    [-10, -8, 56],
+  [5, 9, -1],
+  [100, 2],
+  [-10, -8, 56],
 ]
 let examplebigint = [
-    [5n, 9n, -1n],
-    [100n, 2n],
-    [-10n, -8n, 56n],
+  [5n, 9n, -1n],
+  [100n, 2n],
+  [-10n, -8n, 56n],
 ]
 
 let floor_zero_number: cellopG<number> = e => (e < 0 ? 0 : e)

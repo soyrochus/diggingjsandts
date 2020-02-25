@@ -1,26 +1,26 @@
 // compiles fine
 const functionscope = () => {
-    for (i = 0; i < 10; i++) {
-        console.log(i)
-    }
-    if (true) {
-        // tslint:disable-next-line:no-var-keyword
-        var i = 10000
-    }
+  for (i = 0; i < 10; i++) {
     console.log(i)
+  }
+  if (true) {
+    // tslint:disable-next-line:no-var-keyword
+    var i = 10000
+  }
+  console.log(i)
 }
 
 // gives error TS2304: Cannot find name 'i'.
 function blockscope() {
-    let i
-    for (i = 0; i < 10; i++) {
-        console.log(i)
-    }
-    if (true) {
-        // tslint:disable-next-line:no-shadowed-variable
-        const i = 100000
-    }
+  let i
+  for (i = 0; i < 10; i++) {
     console.log(i)
+  }
+  if (true) {
+    // tslint:disable-next-line:no-shadowed-variable
+    const i = 100000
+  }
+  console.log(i)
 }
 
 functionscope()
@@ -28,11 +28,11 @@ blockscope()
 
 // tslint:disable-next-line:no-var-keyword
 for (var j = 0; j < 10; j++) {
-    setTimeout(() => console.log(`setTimeout with var: ${j}`), 100)
+  setTimeout(() => console.log(`setTimeout with var: ${j}`), 100)
 }
 
 for (let k = 0; k < 10; k++) {
-    setTimeout(() => console.log(`setTimeout with let: ${k}`), 100)
+  setTimeout(() => console.log(`setTimeout with let: ${k}`), 100)
 }
 
 const co = 100

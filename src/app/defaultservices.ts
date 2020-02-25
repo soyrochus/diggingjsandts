@@ -1,9 +1,9 @@
 export default class {
-    public hello() {
-        return 'Hello World!';
-    }
+  public hello() {
+    return 'Hello World!'
+  }
 
-    public hola() {
-        return 'Hola mundo!';
-    }
+  public hola() {
+    return 'Hola mundo!'
+  }
 }
