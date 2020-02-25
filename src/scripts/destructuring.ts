@@ -1,6 +1,6 @@
 const node = {
-    id: 'foo',
-    type: 'Identifier',
+  id: 'foo',
+  type: 'Identifier',
 }
 
 const { type, id } = node
@@ -11,7 +11,7 @@ console.log(id) // "foo”
 // let showName = function( { id } ){
 // tslint:disable-next-line:no-shadowed-variable
 const showName = ({ id }: { id: string }) => {
-    console.log(id)
+  console.log(id)
 }
 showName(node) // "foo”
 showName({ id: 'baz' }) // "baz"
@@ -20,8 +20,8 @@ showName({ id: 'baz' }) // "baz"
 showName({id:10})
 */
 const showName2 = ({ id, extra }: { id: string; extra: string }) => {
-    console.log(id)
-    console.log(extra)
+  console.log(id)
+  console.log(extra)
 }
 
 /* compile error - this would work in EcmaScript!
@@ -47,13 +47,13 @@ console.log(`Nested element in array ${elem2}`)
 // Nested destructuring of objects
 const nestedobject = { anumber: 100, nested: { deep: 'ok' } }
 const {
-    nested: { deep },
+  nested: { deep },
 } = nestedobject
 // compile error: only names "on the right"  of the expression are declared
 // console.log(nested)
 console.log(deep)
 // variable renaming; confusing syntax!
 const {
-    nested: { deep: deepest },
+  nested: { deep: deepest },
 } = nestedobject
 console.log(deepest)

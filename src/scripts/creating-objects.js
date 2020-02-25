@@ -1,36 +1,36 @@
 let createShoppingItem = (name, count, onsale) => {
-    return {
-        name,
-        count: 10,
-        onSale: true,
-        report: function() {
-            let forSale
-            if (this.sale) {
-                forSale = 'for Sale! See the offer...'
-            } else {
-                forSale = 'not for Sale. Normal price-quote in effect.'
-            }
-            console.log(`The product ${this.name} is ${forSale}`)
-        },
-    }
+  return {
+    name,
+    count: 10,
+    onSale: true,
+    report: function() {
+      let forSale
+      if (this.sale) {
+        forSale = 'for Sale! See the offer...'
+      } else {
+        forSale = 'not for Sale. Normal price-quote in effect.'
+      }
+      console.log(`The product ${this.name} is ${forSale}`)
+    },
+  }
 }
 
 let shoppingItem = createShoppingItem('orange', 10, true)
 shoppingItem.report() // -> The product orange is for Sale! See the offer...
 
 function ShoppingItem(name, count, onsale) {
-    this.name = name
-    this.count = count
-    this.onsale = onsale
+  this.name = name
+  this.count = count
+  this.onsale = onsale
 }
 ShoppingItem.prototype.report = function() {
-    let forSale
-    if (this.onsale) {
-        forSale = 'for Sale! See the offer...'
-    } else {
-        forSale = 'not for Sale. Normal price-quote in effect.'
-    }
-    console.log(`The product ${this.name} is ${forSale}`)
+  let forSale
+  if (this.onsale) {
+    forSale = 'for Sale! See the offer...'
+  } else {
+    forSale = 'not for Sale. Normal price-quote in effect.'
+  }
+  console.log(`The product ${this.name} is ${forSale}`)
 }
 
 //The right way

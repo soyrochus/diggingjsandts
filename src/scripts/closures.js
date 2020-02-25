@@ -1,5 +1,5 @@
 let toPower = exponent => {
-    return base => base ** exponent
+  return base => base ** exponent
 }
 
 let square = toPower(2)
@@ -9,11 +9,11 @@ console.log(square(3)) // -> 9
 console.log(cube(3)) // -> 27
 
 let counter = (step, init = 0) => {
-    let state = init
-    return () => {
-        state += step
-        return state
-    }
+  let state = init
+  return () => {
+    state += step
+    return state
+  }
 }
 let one = counter(1)
 let pair = counter(2)

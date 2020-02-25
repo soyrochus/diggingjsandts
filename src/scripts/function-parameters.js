@@ -1,6 +1,6 @@
 let buildName = (firstName, lastName, title = 'Mr./Ms.') => {
-    if (lastName) return `${title} ${firstName} ${lastName}`
-    else return `${firstName}`
+  if (lastName) return `${title} ${firstName} ${lastName}`
+  else return `${firstName}`
 }
 
 // Note that this will not work in TypeScript with strict options set. It will fail to compile with
@@ -12,6 +12,6 @@ console.log(buildName('Emma', 'Watson', 'Miss')) // -> ‘Miss Emma Watson’
 //The rest parameter syntax allows us to represent an indefinite number of arguments as an array.
 
 let cast = (...castmembers) => {
-    console.log(`Harry Potter cast members are: ${castmembers} `)
+  console.log(`Harry Potter cast members are: ${castmembers} `)
 }
 cast('Daniel Radcliffe', 'Emma Watson', 'Rupter Grint', 'Alan Rickman', 'Michael Gambon')

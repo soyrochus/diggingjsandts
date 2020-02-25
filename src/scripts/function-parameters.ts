@@ -1,6 +1,6 @@
 let buildName = (firstName: string, lastName?: string, title: string = 'Mr./Ms.') => {
-    if (lastName) return `${title} ${firstName} ${lastName}`
-    else return `${firstName}`
+  if (lastName) return `${title} ${firstName} ${lastName}`
+  else return `${firstName}`
 }
 
 console.log(buildName('John')) // -> ‘John’

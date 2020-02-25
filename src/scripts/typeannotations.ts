@@ -3,28 +3,28 @@ x = 10
 
 const y = 10
 interface Named {
-    name: string
+  name: string
 }
 class M implements Named {
-    public name: string
-    constructor(name: string) {
-        this.name = name
-    }
+  public name: string
+  constructor(name: string) {
+    this.name = name
+  }
 }
 
 const m: Named = new M('Jorge')
 console.log(m.name)
 
 const double = (a: number): number => {
-    return a + a
+  return a + a
 }
 
 type Doubler = (a: number) => number
 
 const doStuff = (callback: Doubler) => {
-    // do LOTS of stuff
-    console.log(callback(100))
-    console.log(callback(100))
-    console.log(callback(100))
+  // do LOTS of stuff
+  console.log(callback(100))
+  console.log(callback(100))
+  console.log(callback(100))
 }
 doStuff(double)
