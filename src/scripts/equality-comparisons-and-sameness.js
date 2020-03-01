@@ -1,6 +1,6 @@
-var num = 0;
-var obj = new String('0');
-var str = '0';
+let num = 0
+let obj = new String('0')
+let str = '0'
 
 console.log(num === num)// true
 console.log(obj === obj) // true
