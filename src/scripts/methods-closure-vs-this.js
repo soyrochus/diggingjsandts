@@ -1,4 +1,3 @@
-
 const newStack_closure = () => {
     const items = []
 
@@ -8,16 +7,15 @@ const newStack_closure = () => {
         push: newTop => {
             items.unshift(newTop)
         },
-        pop: ()=> { 
+        pop: () => {
             items.shift()
-        }
+        },
     }
 }
 
-const newStack_this = ()=>{
-    
+const newStack_this = () => {
     return {
-        items:[],
+        items: [],
         // depth: function() ...
         depth() {
             return this.items.length
@@ -30,28 +28,28 @@ const newStack_this = ()=>{
         push(newTop) {
             this.items.unshift(newTop)
         },
-        pop() { 
+        pop() {
             this.items.shift()
-        }
+        },
     }
 }
 
-const StackPrototype = function(){
+const StackPrototype = function() {
     this.items = []
 }
 StackPrototype.prototype = {
     depth: function() {
         return this.items.length
     },
-    top: function()  {
+    top: function() {
         return this.items[0]
     },
-    push: function (newTop) {
+    push: function(newTop) {
         this.items.unshift(newTop)
     },
-    pop: function() { 
+    pop: function() {
         this.items.shift()
-    }
+    },
 }
 
 const stack_closure = newStack_closure()

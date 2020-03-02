@@ -2,7 +2,7 @@ let num = 0
 let obj = new String('0')
 let str = '0'
 
-console.log(num === num)// true
+console.log(num === num) // true
 console.log(obj === obj) // true
 console.log(str === str) // true
 

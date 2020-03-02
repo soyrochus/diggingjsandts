@@ -14,16 +14,14 @@ let y1 = _print(['hello', 'text', 'array'])
 
 // let z = print(5) // Error: Argument of type '5' is not assignable to type 'string | string[]'
 
-console.log(x1);
-console.log(y1);
+console.log(x1)
+console.log(y1)
 
 class Student {
-    study() {
-    }
+    study() {}
 }
 class Professor {
-    teach() {
-    }
+    teach() {}
 }
 function getPerson(n: number): Student | Professor {
     if (n === 1) {
@@ -40,4 +38,3 @@ if (person instanceof Student) {
     // so compiler recognizes we can call function teach()
     person.teach()
 }
-

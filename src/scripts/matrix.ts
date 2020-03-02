@@ -7,7 +7,7 @@ export function matrix_map<T>(matrix: Matrix<T>, operation: Celloperation<T>): M
     if (matrix.length === 0) {
         return matrix
     }
-    
+
     if (!Array.isArray(matrix[0])) {
         return (matrix as Array<T>).map(operation)
     }
