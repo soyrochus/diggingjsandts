@@ -17,5 +17,6 @@
     //String
     let part = 'Rubeus Hagrid'
     let actor = 'Robbie Coltrane'
-    let fact = `$p{art} is played by ${actor}`
+    let fact = `${part} is played by ${actor}`
+    console.log(fact)
 })()
