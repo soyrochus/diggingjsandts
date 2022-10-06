@@ -28,4 +28,17 @@ class Fibonacci {
     }
 }
 
+@cache
+function fibonacci(n: number): number {
+    console.log(`fibonacci(${n})`)
+
+    if (n === 0 || n === 1) {
+        return n
+    } else {
+        return this.calc(n - 1) + this.calc(n - 2)
+    }
+}
+
 console.log(Fibonacci.calc(27)) //-> 196418
+
+console.log(fibonacci(27)) //-> 196418
